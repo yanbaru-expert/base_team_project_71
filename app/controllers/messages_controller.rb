@@ -6,6 +6,10 @@ class MessagesController < ApplicationController
   def new
     @message = Message.new
   end
+  def show
+    @message = Message.find(params[:id])
+
+  end
 
   def create
     # Strong Parameter の記述
