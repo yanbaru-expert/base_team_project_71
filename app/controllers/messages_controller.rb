@@ -20,6 +20,11 @@ class MessagesController < ApplicationController
     # Strong Parameter の記述
     Message.create(message_params)
   end
+
+  def destroy
+    message = Message.find(params[:id])
+    message.destroy
+  end
   private
   def message_params
     params.require(:message).permit(:title, :contents)
