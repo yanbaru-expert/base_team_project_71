@@ -8,9 +8,14 @@ class MessagesController < ApplicationController
   end
   def show
     @message = Message.find(params[:id])
-
   end
-
+  def edit
+    @message = Message.find(params[:id])
+  end
+  def update
+    message = Message.find(params[:id])
+    message.update(message_params)
+  end
   def create
     # Strong Parameter の記述
     Message.create(message_params)
